@@ -57,6 +57,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       this.path = prefs.getString('profileImage') ?? "";
+      this.switchValue = prefs.getBool('fingerAuth') ?? false;
       print(path);
     });
   }
@@ -428,7 +429,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                     activeColor: ColorResources
                                                         .color641653,
                                                     value: switchValue,
-                                                    onChanged: (newvalue) {
+                                                    onChanged:
+                                                        (newvalue) async {
+                                                      SharedPreferences prefs =
+                                                          await SharedPreferences
+                                                              .getInstance();
+                                                      prefs.setBool(
+                                                          'fingerAuth',
+                                                          newvalue);
+
                                                       setState(() {
                                                         switchValue = newvalue;
                                                         showDialog(

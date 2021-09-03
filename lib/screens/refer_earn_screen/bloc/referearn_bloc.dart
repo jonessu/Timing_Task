@@ -21,7 +21,6 @@ class ReferearnBloc extends Bloc<ReferearnEvent, ReferearnState> {
         List<Contact> contact =
             (await ContactsService.getContacts(withThumbnails: false)).toList();
         foundUsers = contact;
-        print(foundUsers[1].displayName);
       }
       yield ReferearnLoadedState();
     }
@@ -30,7 +29,6 @@ class ReferearnBloc extends Bloc<ReferearnEvent, ReferearnState> {
         List<Contact> contact =
             (await ContactsService.getContacts(withThumbnails: false)).toList();
         foundUsers = contact;
-        print(foundUsers[1].displayName);
       }
       yield SearchLoadedState();
     }

@@ -27,8 +27,10 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^7.2.0
+  fluttertoast: ^8.0.8
   font_awesome_flutter: ^9.1.0
   image_picker: ^0.8.4
+  local_auth: ^1.1.7
   permission_handler: ^8.1.4+2
   search_page: ^2.0.0+1
   share: ^2.0.4

@@ -42,20 +42,6 @@ class _ReferearnScreenState extends State<ReferearnScreen> {
     referearnBloc = ReferearnBloc()..add(ReferearnInitailEvent());
   }
 
-  static List<Contact> contact = [
-    Contact(name: 'Apple', mobilenumber: '9987654321', time: '6.30'),
-    Contact(name: 'Mango', mobilenumber: '9987654532', time: '7.30'),
-    Contact(name: 'Grapes', mobilenumber: '9956454321', time: '9.30'),
-    Contact(name: 'Cadberry', mobilenumber: '9887654021', time: '8.30'),
-    Contact(name: 'Dairy milk', mobilenumber: '9985645321', time: '4.30'),
-    Contact(name: 'Milkybar', mobilenumber: '9913456789', time: '3.30'),
-    Contact(name: 'Fivestar', mobilenumber: '9983215678', time: '12.30'),
-    Contact(name: 'Eclairs', mobilenumber: '9987672134', time: '11.30'),
-    Contact(name: 'Lays', mobilenumber: '9990564321', time: '2.30'),
-    Contact(name: 'Orange', mobilenumber: '9783213456', time: '8.30'),
-    Contact(name: 'Strawberry', mobilenumber: '9566190788', time: '4.30'),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return BlocListener<ReferearnBloc, ReferearnState>(

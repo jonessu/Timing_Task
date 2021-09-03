@@ -34,8 +34,10 @@ class StringResource {
   static const String More = 'More';
   static const String Invite = 'Invite';
   static const String Searchbynumberorname = 'Search by number or name';
-  // static const String multiple = 'Multiple Selection';
-  // static const String name = 'Name';
+  static const String ScanYourFingerprinttoautheticate =
+      'Scan Your Fingerprint to Autheticate';
+  static const String BiometricAuthenticationSuccessfully =
+      'Biometric Authentication Successfully!';
   // static const String phonenumber = 'phoneNumber';
   // static const String singlemultiple = 'Single Multiple';
   // static const String list = 'List';
