@@ -173,20 +173,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   child: Stack(
                                     children: [
                                       path != ""
-                                          ?
-                                          // ? Container(
-                                          //     decoration: BoxDecoration(
-                                          //       borderRadius:
-                                          //           BorderRadius.circular(12.0),
-                                          //     ),
-                                          //     child: CircleAvatar(
-                                          //       backgroundImage:
-                                          //           Image.file(image!)
-                                          //               ,
-                                          //       radius: 100.0,
-                                          //     ),
-                                          //   )
-                                          ClipRRect(
+                                          ? ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(52.5),
                                               child: Image.file(

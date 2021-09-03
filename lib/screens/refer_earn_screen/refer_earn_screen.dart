@@ -8,6 +8,7 @@ import 'package:assessment/utils/color_resource.dart';
 import 'package:assessment/utils/font.dart';
 import 'package:assessment/utils/image_resource.dart';
 import 'package:assessment/utils/string_resource.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -162,23 +163,29 @@ class _ReferearnScreenState extends State<ReferearnScreen> {
                                       colour: ColorResources.color222222,
                                       fontWeight: FontWeights.normal,
                                     ),
-                                    Container(
-                                      height: 47,
-                                      width: 169,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(15),
-                                        color: Colors.white,
-                                        border: Border.all(
-                                          color: ColorResources.colorFF781F,
-                                          width: 1,
-                                        ),
-                                      ),
-                                      child: Center(
-                                        child: Text_Widget(
-                                          text: referValue,
-                                          fontSize: FontSize.twentyfour,
-                                          colour: ColorResources.color222222,
-                                          fontWeight: FontWeights.normal,
+                                    DottedBorder(
+                                      color: ColorResources.colorFF781F,
+                                      strokeWidth: 1,
+                                      borderType: BorderType.RRect,
+                                      radius: Radius.circular(8),
+                                      child: Container(
+                                        height: 47,
+                                        width: 169,
+                                        // decoration: BoxDecoration(
+                                        //   borderRadius: BorderRadius.circular(15),
+                                        //   color: Colors.white,
+                                        //   border: Border.all(
+                                        //     color: ColorResources.colorFF781F,
+                                        //     width: 1,
+                                        //   ),
+                                        // ),
+                                        child: Center(
+                                          child: Text_Widget(
+                                            text: referValue,
+                                            fontSize: FontSize.twentyfour,
+                                            colour: ColorResources.color222222,
+                                            fontWeight: FontWeights.normal,
+                                          ),
                                         ),
                                       ),
                                     ),

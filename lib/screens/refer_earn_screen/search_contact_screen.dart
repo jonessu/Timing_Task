@@ -29,6 +29,7 @@ class _SearchContactState extends State<SearchContact> {
 
   void runFilter(String enteredKeyword) {
     List<Contact> results = [];
+    searchList = [];
 
     if (enteredKeyword.isEmpty) {
       results = referearnBloc.foundUsers;

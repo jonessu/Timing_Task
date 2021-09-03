@@ -26,6 +26,12 @@ class ReferearnBloc extends Bloc<ReferearnEvent, ReferearnState> {
       yield ReferearnLoadedState();
     }
     if (event is SearchInitailEvent) {
+      if (await Permission.contacts.request().isGranted) {
+        List<Contact> contact =
+            (await ContactsService.getContacts(withThumbnails: false)).toList();
+        foundUsers = contact;
+        print(foundUsers[1].displayName);
+      }
       yield SearchLoadedState();
     }
   }
