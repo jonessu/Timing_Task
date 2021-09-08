@@ -38,19 +38,20 @@ class StringResource {
       'Scan Your Fingerprint to Autheticate';
   static const String BiometricAuthenticationSuccessfully =
       'Biometric Authentication Successfully!';
-  // static const String phonenumber = 'phoneNumber';
-  // static const String singlemultiple = 'Single Multiple';
-  // static const String list = 'List';
-  // static const String bottom = 'BottomTab';
-  // static const String tabbar = 'Tapped bar';
-  // static const String url = 'URL';
-  // static const String encryptedtext = 'ENCRYPTED TEXT';
-  // static const String encryption = 'Encrypt';
-  // static const String decryption = 'Decrypt';
-  // static const String password = 'Password Encrypt';
-  // static const String red = 'Red';
-  // static const String blue = 'Blue';
-  // static const String green = 'Green';
+  static const String PocketsWallet = 'Pockets Wallet';
+  static const String WalletBalance = 'Wallet Balance';
+  static const String LinkyourBankAccount = 'Link your \nBank Account';
+  static const String Duisauteiruredolorinreprehenderitinvoluptate =
+      'Duis aute irure dolor in \nreprehenderit in voluptate.';
+  static const String AppTheme = 'App Theme';
+  static const String CardTheme = 'Card Theme';
+  static const String SelectyourCardTheme = 'Select your Card Theme';
+  static const String AllTheme = 'All Theme';
+  static const String TrendingServices = 'Trending Services';
+  static const String SeeAllServices = 'See All Services';
+  static const String red = 'Red';
+  static const String AllServices = 'All Services';
+  static const String Bank = 'Bank';
   // static const String proceed = 'Proceed';
   // static const String welcome =
   //     'Welcome to the App you are Visiting for the first time';

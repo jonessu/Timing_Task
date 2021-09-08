@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:assessment/Widget/text_widget.dart';
 import 'package:assessment/data/more_option_list.dart';
 import 'package:assessment/screens/Setting_screen/bloc/settings_bloc.dart';
+import 'package:assessment/screens/accounts_screen/accounts_screen.dart';
 import 'package:assessment/screens/refer_earn_screen/refer_earn_screen.dart';
 import 'package:assessment/utils/color_resource.dart';
 import 'package:assessment/utils/font.dart';
@@ -11,7 +12,6 @@ import 'package:assessment/utils/string_resource.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -138,25 +138,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                           fontWeight: FontWeights.normal,
                                         ),
                                         SizedBox(height: FontSize.seventeen),
-                                        Container(
-                                          height: 47,
-                                          width: 122,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(15),
-                                            color: Colors.white,
-                                            border: Border.all(
-                                              color: ColorResources.colorFF781F,
-                                              width: 1,
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        AccountScreen()));
+                                          },
+                                          child: Container(
+                                            height: 47,
+                                            width: 122,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(15),
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                color:
+                                                    ColorResources.colorFF781F,
+                                                width: 1,
+                                              ),
                                             ),
-                                          ),
-                                          child: Center(
-                                            child: Text_Widget(
-                                              text: StringResource.Accounts,
-                                              fontSize: FontSize.sixteen,
-                                              colour:
-                                                  ColorResources.color222222,
-                                              fontWeight: FontWeights.normal,
+                                            child: Center(
+                                              child: Text_Widget(
+                                                text: StringResource.Accounts,
+                                                fontSize: FontSize.sixteen,
+                                                colour:
+                                                    ColorResources.color222222,
+                                                fontWeight: FontWeights.normal,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -198,7 +207,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                             width: 78,
                                             height: 18,
                                             decoration: BoxDecoration(
-                                              color: ColorResources.color641653,
+                                              color: Theme.of(context)
+                                                  .primaryColor,
                                               borderRadius:
                                                   BorderRadius.circular(
                                                       FontSize.thirty),
@@ -426,8 +436,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                 ? CupertinoSwitch(
                                                     trackColor: ColorResources
                                                         .color222222,
-                                                    activeColor: ColorResources
-                                                        .color641653,
+                                                    activeColor:
+                                                        Theme.of(context)
+                                                            .primaryColor,
                                                     value: switchValue,
                                                     onChanged:
                                                         (newvalue) async {

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:assessment/screens/Setting_screen/setting_screen.dart';
 import 'package:assessment/screens/biometric_screen/biometric_screen.dart';
+import 'package:assessment/screens/home_tab_screen/home_tab_screen.dart';
 import 'package:assessment/screens/splash_screen/bloc/splash_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
         else
           {
             Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => SettingsScreen()))
+                MaterialPageRoute(builder: (context) => HometabScreen()))
           }
       },
     );

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:assessment/screens/Setting_screen/setting_screen.dart';
 import 'package:assessment/screens/biometric_screen/bloc/biometric_bloc.dart';
+import 'package:assessment/screens/home_tab_screen/home_tab_screen.dart';
 import 'package:assessment/utils/color_resource.dart';
 import 'package:assessment/utils/string_resource.dart';
 import 'package:flutter/material.dart';
@@ -38,13 +39,13 @@ class _BiometricScreenState extends State<BiometricScreen> {
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
           timeInSecForIosWeb: 1,
-          backgroundColor: ColorResources.color641653,
+          backgroundColor: Theme.of(context).primaryColor,
           textColor: Colors.white,
           fontSize: 16.0,
         );
         Timer(Duration(seconds: 2), () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => SettingsScreen()));
+              .push(MaterialPageRoute(builder: (context) => HometabScreen()));
         });
       }
     } on PlatformException catch (e) {
