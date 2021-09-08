@@ -172,29 +172,29 @@ List newAllServiceList = [
       ListOfIcons: [
         AllServiceChildModel(
             icon: ImageResource.new_all_service_pay_to_contacts,
-            name: 'Pay to Contacts',
+            name: 'Pay to \nContacts',
             title: 'Pay to Contacts'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_fund_transfer,
-            name: 'Fund Transfer',
+            name: 'Fund \nTransfer',
             title: 'Fund Transfer'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_upi, name: 'UPI', title: 'UPI'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_add_funds,
-            name: 'Add Funds',
+            name: 'Add \nFunds',
             title: 'Add Funds'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_request_money,
-            name: 'Request Money',
+            name: 'Request \nMoney',
             title: 'Request Money'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_apply_for_pockets_card,
-            name: 'Apply for Pockets Card',
+            name: 'Apply for \nPockets Card',
             title: 'Apply for Pockets Card'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_scan_to_pay,
-            name: 'Scan to Pay',
+            name: 'Scan to \nPay',
             title: 'Scan to Pay'),
       ]),
   AllServiceMainModel('Recharge, Bills & Offers',
@@ -223,41 +223,41 @@ List newAllServiceList = [
             title: 'Offers'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_scan_to_pay,
-            name: 'Cash Karo Earnings',
+            name: 'CashKaro \nEarnings',
             title: 'Cash Karo Earnings'),
       ]),
   AllServiceMainModel('Payments', titleName: 'Bank', noOfRow: 1, ListOfIcons: [
     AllServiceChildModel(
         icon: ImageResource.new_all_service_pay_to_contacts,
-        name: 'Split Bills',
+        name: 'Split \nBills',
         title: 'Split Bills'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_fund_transfer,
-        name: 'Savings Account',
+        name: 'Savings \nAccount',
         title: 'Savings Account'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_upi,
-        name: 'Prepaid Card',
+        name: 'Prepaid \nCard',
         title: 'Prepaid Card'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_upi,
-        name: 'Personal Loan',
+        name: 'Personal \nLoan',
         title: 'Personal Loan'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_add_funds,
-        name: 'Two Wheeler Loan',
+        name: 'Two \nWheeler \nLoan',
         title: 'Two Wheeler Loan'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_pay_to_contacts,
-        name: 'Wallet Protection Plan',
+        name: 'Wallet \nProtection \nPlan',
         title: 'Wallet Protection Plan'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_fund_transfer,
-        name: 'Card Protection Plan',
+        name: 'Card \nProtection \nPlan',
         title: 'Card Protection Plan'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_upi,
-        name: 'Mutual Funds',
+        name: 'Mutual \nFunds',
         title: 'Mutual Funds'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_add_funds,
@@ -403,34 +403,3 @@ class allServiceListClass {
   final String title;
   final String image;
 }
-
-const List<allServiceListClass> choices = const <allServiceListClass>[
-  allServiceListClass(
-      newBool: true,
-      title: 'Pay to Contacts',
-      image: ImageResource.PaytoContactsIcon),
-  allServiceListClass(
-      newBool: true,
-      title: 'Fund Transfer',
-      image: ImageResource.FundTransferIcon),
-  allServiceListClass(
-      newBool: true, title: 'UPI', image: ImageResource.UpiIcon),
-  allServiceListClass(
-      newBool: true, title: 'Add Funds', image: ImageResource.AddFundsIcon),
-  allServiceListClass(
-      newBool: true,
-      title: 'Request Money',
-      image: ImageResource.RequestMoneyIcon),
-  allServiceListClass(
-      newBool: true,
-      title: 'Fund Transfer',
-      image: ImageResource.FundTransferIcon),
-  allServiceListClass(
-      newBool: true, title: 'UPI', image: ImageResource.UpiIcon),
-  allServiceListClass(
-      newBool: true, title: 'Add Funds', image: ImageResource.AddFundsIcon),
-  allServiceListClass(
-      newBool: true,
-      title: 'Request Money',
-      image: ImageResource.RequestMoneyIcon),
-];
