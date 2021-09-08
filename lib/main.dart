@@ -2,6 +2,7 @@ import 'package:assessment/data/ThemeNotifier.dart';
 import 'package:assessment/data/color.dart';
 import 'package:assessment/screens/Setting_screen/setting_screen.dart';
 import 'package:assessment/screens/ThemeNotifier/bloc/theme_bloc.dart';
+import 'package:assessment/screens/all_service_screen/all_service_screen.dart';
 import 'package:assessment/screens/biometric_screen/biometric_screen.dart';
 import 'package:assessment/screens/refer_earn_screen/refer_earn_screen.dart';
 import 'package:assessment/screens/splash_screen/splash_screen.dart';
@@ -73,7 +74,7 @@ class _MyAppState extends State<MyApp> {
         //   primaryColor: ColorResources.color51063A,
         // ),
         //home: boolValue ? BiometricScreen() : SettingsScreen(),
-        home: SplashScreen(),
+        home: ServiceScreen(),
       ),
     );
   }

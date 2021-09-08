@@ -107,26 +107,33 @@ List trendServiceList = [
   allServiceListClass(
       newBool: true,
       title: 'Pay to Contacts',
-      image: ImageResource.PaytoContactsImg),
+      image: ImageResource.all_service_pay_to_contacts),
   allServiceListClass(
       newBool: false,
       title: 'Fund Transfer',
-      image: ImageResource.FundTransferImg),
-  allServiceListClass(newBool: true, title: 'UPI', image: ImageResource.UPIImg),
+      image: ImageResource.all_service_fund_transfer),
   allServiceListClass(
-      newBool: false, title: 'Add Funds', image: ImageResource.AddFundsImg),
+      newBool: true, title: 'UPI', image: ImageResource.all_service_upi),
+  allServiceListClass(
+      newBool: false,
+      title: 'Add Funds',
+      image: ImageResource.all_service_add_funds),
   allServiceListClass(
       newBool: true,
       title: 'Request Money',
-      image: ImageResource.RequestMoneyImg),
+      image: ImageResource.all_service_request_money),
   allServiceListClass(
-      newBool: false, title: 'Bill Pay', image: ImageResource.BillPayImg),
+      newBool: false,
+      title: 'Bill Pay',
+      image: ImageResource.all_service_bill_pay),
   allServiceListClass(
-      newBool: false, title: 'Recharge', image: ImageResource.RechargeImg),
+      newBool: false,
+      title: 'Recharge',
+      image: ImageResource.all_service_recharge),
   allServiceListClass(
-      newBool: false, title: 'FASTag', image: ImageResource.FASTagImg),
+      newBool: false, title: 'FASTag', image: ImageResource.all_service_fastag),
   allServiceListClass(
-      newBool: false, title: 'Offers', image: ImageResource.OffersImg),
+      newBool: false, title: 'Offers', image: ImageResource.all_service_offers),
 ];
 
 List allServiceList = [
@@ -136,46 +143,58 @@ List allServiceList = [
       allServiceListClass(
           newBool: true,
           title: 'Pay to Contacts',
-          image: ImageResource.PaytoContactsImg),
+          image: ImageResource.all_service_pay_to_contacts),
       allServiceListClass(
           newBool: true,
           title: 'Fund Transfer',
-          image: ImageResource.FundTransferImg),
+          image: ImageResource.all_service_fund_transfer),
       allServiceListClass(
-          newBool: true, title: 'UPI', image: ImageResource.UPIImg),
+          newBool: true, title: 'UPI', image: ImageResource.all_service_upi),
       allServiceListClass(
-          newBool: true, title: 'Add Funds', image: ImageResource.AddFundsImg),
+          newBool: true,
+          title: 'Add Funds',
+          image: ImageResource.all_service_add_funds),
       allServiceListClass(
           newBool: true,
           title: 'Request Money',
-          image: ImageResource.RequestMoneyImg),
+          image: ImageResource.all_service_request_money),
       allServiceListClass(
           newBool: true,
           title: 'Apply for Pockets Card',
-          image: ImageResource.ApplyforPocketsCardImg),
+          image: ImageResource.all_service_apply_for_pockets_card),
       allServiceListClass(
           newBool: true,
           title: 'Scan to Pay',
-          image: ImageResource.ScantoPayImg),
+          image: ImageResource.all_service_scan_to_pay),
     ]
   },
   {
     'name': 'Recharge, Bills & Offers',
     'listItem': [
       allServiceListClass(
-          newBool: true, title: 'Bill Pay', image: ImageResource.BillPayImg),
+          newBool: true,
+          title: 'Bill Pay',
+          image: ImageResource.all_service_bill_pay),
       allServiceListClass(
-          newBool: true, title: 'Recharge', image: ImageResource.RechargeImg),
+          newBool: true,
+          title: 'Recharge',
+          image: ImageResource.all_service_recharge),
       allServiceListClass(
-          newBool: true, title: 'FASTag', image: ImageResource.FASTagImg),
+          newBool: true,
+          title: 'FASTag',
+          image: ImageResource.all_service_fastag),
       allServiceListClass(
-          newBool: true, title: 'PayPal', image: ImageResource.PayPalImg),
+          newBool: true,
+          title: 'PayPal',
+          image: ImageResource.all_service_paypal),
       allServiceListClass(
-          newBool: true, title: 'Offers', image: ImageResource.OffersImg),
+          newBool: true,
+          title: 'Offers',
+          image: ImageResource.all_service_offers),
       allServiceListClass(
           newBool: true,
           title: 'Cash Karo Earnings',
-          image: ImageResource.CashKaroEarningsImg),
+          image: ImageResource.all_service_cash_karo_earning),
     ]
   },
   {
@@ -184,43 +203,47 @@ List allServiceList = [
       allServiceListClass(
           newBool: true,
           title: 'Split Bills',
-          image: ImageResource.SplitBillsImg),
+          image: ImageResource.all_service_split_bills),
       allServiceListClass(
           newBool: true,
           title: 'Savings Account',
-          image: ImageResource.SavingsAccountImg),
+          image: ImageResource.all_service_savings_account),
       allServiceListClass(
           newBool: true,
           title: 'Prepaid Card',
-          image: ImageResource.PrepaidCardImg),
+          image: ImageResource.all_service_prepaid_card),
       allServiceListClass(
           newBool: true,
           title: 'Personal Loan',
-          image: ImageResource.PersonalLoanImg),
+          image: ImageResource.all_service_personal_loan),
       allServiceListClass(
           newBool: true,
           title: 'Two Wheeler Loan',
-          image: ImageResource.TwoWheelerLoanImg),
+          image: ImageResource.all_service_two_wheeler_loan),
       allServiceListClass(
           newBool: true,
           title: 'Wallet Protection Plan',
-          image: ImageResource.WalletProtectionPlanImg),
+          image: ImageResource.all_service_wallet_protection_plan),
       allServiceListClass(
           newBool: true,
           title: 'Card Protection Plan',
-          image: ImageResource.CardProtectionPlanImg),
+          image: ImageResource.all_service_card_protection_plan),
       allServiceListClass(
           newBool: true,
           title: 'Mutual Funds',
-          image: ImageResource.MutualFundsImg),
+          image: ImageResource.all_service_mutual_funds),
       allServiceListClass(
-          newBool: true, title: 'FD/RD', image: ImageResource.FDRDImg),
+          newBool: true, title: 'FD/RD', image: ImageResource.all_service_fdrd),
       allServiceListClass(
-          newBool: true, title: 'iWish', image: ImageResource.iWishImg),
+          newBool: true,
+          title: 'iWish',
+          image: ImageResource.all_service_i_wish),
       allServiceListClass(
-          newBool: true, title: 'Paylater', image: ImageResource.PaylaterImg),
+          newBool: true,
+          title: 'Paylater',
+          image: ImageResource.all_service_pay_later),
       allServiceListClass(
-          newBool: true, title: 'KYC', image: ImageResource.KYCImg),
+          newBool: true, title: 'KYC', image: ImageResource.all_service_kyc),
     ]
   }
 ];

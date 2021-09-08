@@ -6,7 +6,6 @@ import 'package:assessment/screens/ThemeNotifier/bloc/theme_bloc.dart';
 import 'package:assessment/screens/all_service_screen/bloc/service_bloc.dart';
 import 'package:assessment/utils/color_resource.dart';
 import 'package:assessment/utils/font.dart';
-import 'package:assessment/utils/image_resource.dart';
 import 'package:assessment/utils/string_resource.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -101,510 +100,501 @@ class _ServiceScreenState extends State<ServiceScreen> {
               body: SingleChildScrollView(
                 child: Column(
                   children: [
-                    // SizedBox(
-                    //   height: 300,
-                    //   child: ListView.builder(
-                    //       itemCount: allServiceList.length,
-                    //       itemBuilder: (BuildContext context, int index) {
-                    //         return Padding(
-                    //           padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                    //           child: Card(
-                    //             child: Padding(
-                    //               padding: const EdgeInsets.all(16.0),
-                    //               child: Column(
-                    //                 children: [
-                    //                   Align(
-                    //                     alignment: Alignment.topLeft,
-                    //                     child: Text_Widget(
-                    //                       text: allServiceList[index]['name'],
-                    //                       fontSize: FontSize.twenty,
-                    //                       colour: ColorResources.color222222,
-                    //                       fontWeight: FontWeight.w700,
-                    //                     ),
-                    //                   ),
-                    //                   SizedBox(
-                    //                       height: 181,
-                    //                       child: GridView.count(
-                    //                           crossAxisCount: 4,
-                    //                           crossAxisSpacing: 0,
-                    //                           mainAxisSpacing: 8.0,
-                    //                           children: List.generate(
-                    //                               allServiceList[index]
-                    //                                               ['listItem']
-                    //                                           .length >
-                    //                                       6
-                    //                                   ? allServiceList[index]
-                    //                                           ['listItem']
-                    //                                       .length
-                    //                                   : 8, (index) {
-                    //                             return allServiceList[index]
-                    //                                             ['listItem']
-                    //                                         .length >
-                    //                                     6
-                    //                                 ? Container(
-                    //                                     width: 74,
-                    //                                     child: index > 6
-                    //                                         ? GestureDetector(
-                    //                                             onTap: () =>
-                    //                                                 customModalBottomSheet(
-                    //                                                     context,
-                    //                                                     0),
-                    //                                             child:
-                    //                                                 Container(
-                    //                                               child: Column(
-                    //                                                 children: [
-                    //                                                   Container(
-                    //                                                     width:
-                    //                                                         36,
-                    //                                                     height:
-                    //                                                         36,
-                    //                                                     decoration:
-                    //                                                         BoxDecoration(
-                    //                                                       color:
-                    //                                                           ColorResources.colorFFF3E9,
-                    //                                                       borderRadius:
-                    //                                                           BorderRadius.circular(20),
-                    //                                                     ),
-                    //                                                     child:
-                    //                                                         Center(
-                    //                                                       child:
-                    //                                                           Text_Widget(
-                    //                                                         text:
-                    //                                                             "+" + (allServiceList[index]['listItem'].length - 7).toString(),
-                    //                                                         fontSize:
-                    //                                                             FontSize.sixteen,
-                    //                                                         colour:
-                    //                                                             ColorResources.colorFA3245,
-                    //                                                         fontWeight:
-                    //                                                             FontWeight.w700,
-                    //                                                       ),
-                    //                                                     ),
-                    //                                                   ),
-                    //                                                   Text_Widget(
-                    //                                                     text:
-                    //                                                         'more',
-                    //                                                     fontSize:
-                    //                                                         FontSize.fourteen,
-                    //                                                     colour:
-                    //                                                         ColorResources.color222222,
-                    //                                                     fontWeight:
-                    //                                                         FontWeight.w400,
-                    //                                                   ),
-                    //                                                 ],
-                    //                                               ),
-                    //                                             ),
-                    //                                           )
-                    //                                         : Center(
-                    //                                             child: Image.asset(
-                    //                                                 allServiceList[index]['listItem']
-                    //                                                         [
-                    //                                                         index]
-                    //                                                     .image),
-                    //                                           ),
-                    //                                   )
-                    //                                 : Container(
-                    //                                     width: 74,
-                    //                                     child: Center(
-                    //                                       child: Image.asset(
-                    //                                           allServiceList[index]
-                    //                                                       [
-                    //                                                       'listItem']
-                    //                                                   [index]
-                    //                                               .image),
-                    //                                     ),
-                    //                                   );
-                    //                           }))),
-                    //                 ],
-                    //               ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height - 110,
+                      child: ListView.builder(
+                          itemCount: allServiceList.length,
+                          itemBuilder: (BuildContext context, int i) {
+                            return Padding(
+                              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                              child: Card(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    children: [
+                                      Align(
+                                        alignment: Alignment.topLeft,
+                                        child: Text_Widget(
+                                          text: allServiceList[i]['name'],
+                                          fontSize: FontSize.twenty,
+                                          colour: ColorResources.color222222,
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                          height: (i == 2 ? 80 : 181),
+                                          child: GridView.count(
+                                              crossAxisCount: 4,
+                                              crossAxisSpacing: 0,
+                                              mainAxisSpacing: 8.0,
+                                              children: List.generate(
+                                                  allServiceList[i]['listItem']
+                                                              .length <
+                                                          (i == 2 ? 3 : 7)
+                                                      ? allServiceList[i]
+                                                              ['listItem']
+                                                          .length
+                                                      : (i == 2 ? 4 : 8),
+                                                  (index) {
+                                                return allServiceList[i]
+                                                                ['listItem']
+                                                            .length >
+                                                        (i == 2 ? 2 : 6)
+                                                    ? Container(
+                                                        width: 74,
+                                                        child: index >
+                                                                (i == 2 ? 2 : 6)
+                                                            ? GestureDetector(
+                                                                onTap: () =>
+                                                                    customModalBottomSheet(
+                                                                        context,
+                                                                        i),
+                                                                child: (allServiceList[i]['listItem'].length -
+                                                                            (i == 2
+                                                                                ? 3
+                                                                                : 7) <=
+                                                                        0)
+                                                                    ? SizedBox()
+                                                                    : Container(
+                                                                        child:
+                                                                            Column(
+                                                                          children: [
+                                                                            Container(
+                                                                              width: 36,
+                                                                              height: 36,
+                                                                              decoration: BoxDecoration(
+                                                                                color: ColorResources.colorFFF3E9,
+                                                                                borderRadius: BorderRadius.circular(20),
+                                                                              ),
+                                                                              child: Center(
+                                                                                child: Text_Widget(
+                                                                                  text: "+" + (allServiceList[i]['listItem'].length - (i == 2 ? 3 : 7)).toString(),
+                                                                                  fontSize: FontSize.sixteen,
+                                                                                  colour: ColorResources.colorFA3245,
+                                                                                  fontWeight: FontWeight.w700,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            Text_Widget(
+                                                                              text: 'more',
+                                                                              fontSize: FontSize.fourteen,
+                                                                              colour: ColorResources.color222222,
+                                                                              fontWeight: FontWeight.w400,
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                              )
+                                                            : Center(
+                                                                child: Image.asset(
+                                                                    allServiceList[i]['listItem']
+                                                                            [
+                                                                            index]
+                                                                        .image),
+                                                              ),
+                                                      )
+                                                    : Container(
+                                                        width: 74,
+                                                        child: Center(
+                                                          child: Image.asset(
+                                                              allServiceList[i][
+                                                                          'listItem']
+                                                                      [index]
+                                                                  .image),
+                                                        ),
+                                                      );
+                                              }))),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            );
+                          }),
+                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                    //   child: Card(
+                    //     child: Padding(
+                    //       padding: const EdgeInsets.all(16.0),
+                    //       child: Column(
+                    //         children: [
+                    //           Align(
+                    //             alignment: Alignment.topLeft,
+                    //             child: Text_Widget(
+                    //               text: allServiceList[0]['name'],
+                    //               fontSize: FontSize.twenty,
+                    //               colour: ColorResources.color222222,
+                    //               fontWeight: FontWeight.w700,
                     //             ),
                     //           ),
-                    //         );
-                    //       }),
+                    //           SizedBox(
+                    //               height: 181,
+                    //               child: GridView.count(
+                    //                   crossAxisCount: 4,
+                    //                   crossAxisSpacing: 0,
+                    //                   mainAxisSpacing: 8.0,
+                    //                   children: List.generate(
+                    //                       allServiceList[0]['listItem'].length >
+                    //                               6
+                    //                           ? allServiceList[0]['listItem']
+                    //                               .length
+                    //                           : 8, (index) {
+                    //                     return allServiceList[0]['listItem']
+                    //                                 .length >
+                    //                             6
+                    //                         ? Container(
+                    //                             width: 74,
+                    //                             child: index > 6
+                    //                                 ? GestureDetector(
+                    //                                     onTap: () =>
+                    //                                         customModalBottomSheet(
+                    //                                             context, 0),
+                    //                                     child: Container(
+                    //                                       child: Column(
+                    //                                         children: [
+                    //                                           Container(
+                    //                                             width: 36,
+                    //                                             height: 36,
+                    //                                             decoration:
+                    //                                                 BoxDecoration(
+                    //                                               color: ColorResources
+                    //                                                   .colorFFF3E9,
+                    //                                               borderRadius:
+                    //                                                   BorderRadius
+                    //                                                       .circular(
+                    //                                                           20),
+                    //                                             ),
+                    //                                             child: Center(
+                    //                                               child:
+                    //                                                   Text_Widget(
+                    //                                                 text: "+" +
+                    //                                                     (allServiceList[0]['listItem'].length -
+                    //                                                             7)
+                    //                                                         .toString(),
+                    //                                                 fontSize:
+                    //                                                     FontSize
+                    //                                                         .sixteen,
+                    //                                                 colour: ColorResources
+                    //                                                     .colorFA3245,
+                    //                                                 fontWeight:
+                    //                                                     FontWeight
+                    //                                                         .w700,
+                    //                                               ),
+                    //                                             ),
+                    //                                           ),
+                    //                                           Text_Widget(
+                    //                                             text: 'more',
+                    //                                             fontSize: FontSize
+                    //                                                 .fourteen,
+                    //                                             colour: ColorResources
+                    //                                                 .color222222,
+                    //                                             fontWeight:
+                    //                                                 FontWeight
+                    //                                                     .w400,
+                    //                                           ),
+                    //                                         ],
+                    //                                       ),
+                    //                                     ),
+                    //                                   )
+                    //                                 : Center(
+                    //                                     child: Image.asset(
+                    //                                         allServiceList[0][
+                    //                                                     'listItem']
+                    //                                                 [index]
+                    //                                             .image),
+                    //                                   ),
+                    //                           )
+                    //                         : Container(
+                    //                             width: 74,
+                    //                             child: Center(
+                    //                               child: Image.asset(
+                    //                                   allServiceList[0]
+                    //                                               ['listItem']
+                    //                                           [index]
+                    //                                       .image),
+                    //                             ),
+                    //                           );
+                    //                   }))),
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
                     // ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                child: Text_Widget(
-                                  text: allServiceList[0]['name'],
-                                  fontSize: FontSize.twenty,
-                                  colour: ColorResources.color222222,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                              SizedBox(
-                                  height: 181,
-                                  child: GridView.count(
-                                      crossAxisCount: 4,
-                                      crossAxisSpacing: 0,
-                                      mainAxisSpacing: 8.0,
-                                      children: List.generate(
-                                          allServiceList[0]['listItem'].length >
-                                                  6
-                                              ? allServiceList[0]['listItem']
-                                                  .length
-                                              : 8, (index) {
-                                        return allServiceList[0]['listItem']
-                                                    .length >
-                                                6
-                                            ? Container(
-                                                width: 74,
-                                                child: index > 6
-                                                    ? GestureDetector(
-                                                        onTap: () =>
-                                                            customModalBottomSheet(
-                                                                context, 0),
-                                                        child: Container(
-                                                          child: Column(
-                                                            children: [
-                                                              Container(
-                                                                width: 36,
-                                                                height: 36,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: ColorResources
-                                                                      .colorFFF3E9,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              20),
-                                                                ),
-                                                                child: Center(
-                                                                  child:
-                                                                      Text_Widget(
-                                                                    text: "+" +
-                                                                        (allServiceList[0]['listItem'].length -
-                                                                                7)
-                                                                            .toString(),
-                                                                    fontSize:
-                                                                        FontSize
-                                                                            .sixteen,
-                                                                    colour: ColorResources
-                                                                        .colorFA3245,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w700,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Text_Widget(
-                                                                text: 'more',
-                                                                fontSize: FontSize
-                                                                    .fourteen,
-                                                                colour: ColorResources
-                                                                    .color222222,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w400,
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      )
-                                                    : Center(
-                                                        child: Image.asset(
-                                                            allServiceList[0][
-                                                                        'listItem']
-                                                                    [index]
-                                                                .image),
-                                                      ),
-                                              )
-                                            : Container(
-                                                width: 74,
-                                                child: Center(
-                                                  child: Image.asset(
-                                                      allServiceList[0]
-                                                                  ['listItem']
-                                                              [index]
-                                                          .image),
-                                                ),
-                                              );
-                                      }))),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                child: Text_Widget(
-                                  text: allServiceList[1]['name'],
-                                  fontSize: FontSize.twenty,
-                                  colour: ColorResources.color222222,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                              SizedBox(
-                                  height: 181,
-                                  child: GridView.count(
-                                      crossAxisCount: 4,
-                                      crossAxisSpacing: 0,
-                                      mainAxisSpacing: 8.0,
-                                      children: List.generate(
-                                          allServiceList[1]['listItem'].length <
-                                                  7
-                                              ? allServiceList[1]['listItem']
-                                                  .length
-                                              : 8, (index) {
-                                        return allServiceList[1]['listItem']
-                                                    .length >
-                                                6
-                                            ? Container(
-                                                width: 74,
-                                                child: index > 6
-                                                    ? GestureDetector(
-                                                        onTap: () =>
-                                                            customModalBottomSheet(
-                                                                context, 1),
-                                                        child: Container(
-                                                          child: Column(
-                                                            children: [
-                                                              Container(
-                                                                width: 36,
-                                                                height: 36,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: ColorResources
-                                                                      .colorFFF3E9,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              20),
-                                                                ),
-                                                                child: Center(
-                                                                  child:
-                                                                      Text_Widget(
-                                                                    text: "+" +
-                                                                        (allServiceList[1]['listItem'].length -
-                                                                                7)
-                                                                            .toString(),
-                                                                    fontSize:
-                                                                        FontSize
-                                                                            .sixteen,
-                                                                    colour: ColorResources
-                                                                        .colorFA3245,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w700,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Text_Widget(
-                                                                text: 'more',
-                                                                fontSize: FontSize
-                                                                    .fourteen,
-                                                                colour: ColorResources
-                                                                    .color222222,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w400,
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      )
-                                                    : Center(
-                                                        child: Image.asset(
-                                                            allServiceList[1][
-                                                                        'listItem']
-                                                                    [index]
-                                                                .image),
-                                                      ),
-                                              )
-                                            : Container(
-                                                width: 74,
-                                                child: Center(
-                                                  child: Image.asset(
-                                                      allServiceList[1]
-                                                                  ['listItem']
-                                                              [index]
-                                                          .image),
-                                                ),
-                                              );
-                                      }))),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                child: Text_Widget(
-                                  text: allServiceList[2]['name'],
-                                  fontSize: FontSize.twenty,
-                                  colour: ColorResources.color222222,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                              SizedBox(
-                                  height: 80,
-                                  child: GridView.count(
-                                      crossAxisCount: 4,
-                                      crossAxisSpacing: 0,
-                                      mainAxisSpacing: 8.0,
-                                      children: List.generate(
-                                          allServiceList[2]['listItem'].length <
-                                                  3
-                                              ? allServiceList[2]['listItem']
-                                                  .length
-                                              : 4, (index) {
-                                        if (allServiceList[2]['listItem']
-                                                .length >
-                                            3) {
-                                          return Container(
-                                            width: 74,
-                                            child: index > 2
-                                                ? GestureDetector(
-                                                    onTap: () =>
-                                                        customModalBottomSheet(
-                                                            context, 2),
-                                                    child: Container(
-                                                      child: Column(
-                                                        children: [
-                                                          Container(
-                                                            width: 36,
-                                                            height: 36,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: ColorResources
-                                                                  .colorFFF3E9,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          20),
-                                                            ),
-                                                            child: Center(
-                                                              child:
-                                                                  Text_Widget(
-                                                                text: "+" +
-                                                                    (allServiceList[2]['listItem'].length -
-                                                                            3)
-                                                                        .toString(),
-                                                                fontSize:
-                                                                    FontSize
-                                                                        .sixteen,
-                                                                colour: ColorResources
-                                                                    .colorFA3245,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w700,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Text_Widget(
-                                                            text: 'more',
-                                                            fontSize: FontSize
-                                                                .fourteen,
-                                                            colour:
-                                                                ColorResources
-                                                                    .color222222,
-                                                            fontWeight:
-                                                                FontWeight.w400,
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  )
-                                                : Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Image.asset(allServiceList[
-                                                                  2]['listItem']
-                                                              [index]
-                                                          .image),
-                                                      SizedBox(height: 8),
-                                                      Expanded(
-                                                        child: Align(
-                                                          alignment: Alignment
-                                                              .topCenter,
-                                                          child: Center(
-                                                            child: Text_Widget(
-                                                              text: allServiceList[
-                                                                          2][
-                                                                      'listItem'][0]
-                                                                  .title,
-                                                              fontSize: FontSize
-                                                                  .fourteen,
-                                                              colour:
-                                                                  ColorResources
-                                                                      .color222222,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                          );
-                                        } else {
-                                          return Container(
-                                            width: 74,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Image.asset(allServiceList[2]
-                                                        ['listItem'][1]
-                                                    .image),
-                                                SizedBox(height: 8),
-                                                Expanded(
-                                                  child: Align(
-                                                    alignment:
-                                                        Alignment.topCenter,
-                                                    child: Center(
-                                                      child: Text_Widget(
-                                                        text: allServiceList[2]
-                                                                    ['listItem']
-                                                                [index]
-                                                            .title,
-                                                        fontSize:
-                                                            FontSize.fourteen,
-                                                        colour: ColorResources
-                                                            .color222222,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          );
-                                        }
-                                      }))),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                    //   child: Card(
+                    //     child: Padding(
+                    //       padding: const EdgeInsets.all(16.0),
+                    //       child: Column(
+                    //         children: [
+                    //           Align(
+                    //             alignment: Alignment.topLeft,
+                    //             child: Text_Widget(
+                    //               text: allServiceList[1]['name'],
+                    //               fontSize: FontSize.twenty,
+                    //               colour: ColorResources.color222222,
+                    //               fontWeight: FontWeight.w700,
+                    //             ),
+                    //           ),
+                    //           SizedBox(
+                    //               height: 181,
+                    //               child: GridView.count(
+                    //                   crossAxisCount: 4,
+                    //                   crossAxisSpacing: 0,
+                    //                   mainAxisSpacing: 8.0,
+                    //                   children: List.generate(
+                    //                       allServiceList[1]['listItem'].length <
+                    //                               7
+                    //                           ? allServiceList[1]['listItem']
+                    //                               .length
+                    //                           : 8, (index) {
+                    //                     return allServiceList[1]['listItem']
+                    //                                 .length >
+                    //                             6
+                    //                         ? Container(
+                    //                             width: 74,
+                    //                             child: index > 6
+                    //                                 ? GestureDetector(
+                    //                                     onTap: () =>
+                    //                                         customModalBottomSheet(
+                    //                                             context, 1),
+                    //                                     child: Container(
+                    //                                       child: Column(
+                    //                                         children: [
+                    //                                           Container(
+                    //                                             width: 36,
+                    //                                             height: 36,
+                    //                                             decoration:
+                    //                                                 BoxDecoration(
+                    //                                               color: ColorResources
+                    //                                                   .colorFFF3E9,
+                    //                                               borderRadius:
+                    //                                                   BorderRadius
+                    //                                                       .circular(
+                    //                                                           20),
+                    //                                             ),
+                    //                                             child: Center(
+                    //                                               child:
+                    //                                                   Text_Widget(
+                    //                                                 text: "+" +
+                    //                                                     (allServiceList[1]['listItem'].length -
+                    //                                                             7)
+                    //                                                         .toString(),
+                    //                                                 fontSize:
+                    //                                                     FontSize
+                    //                                                         .sixteen,
+                    //                                                 colour: ColorResources
+                    //                                                     .colorFA3245,
+                    //                                                 fontWeight:
+                    //                                                     FontWeight
+                    //                                                         .w700,
+                    //                                               ),
+                    //                                             ),
+                    //                                           ),
+                    //                                           Text_Widget(
+                    //                                             text: 'more',
+                    //                                             fontSize: FontSize
+                    //                                                 .fourteen,
+                    //                                             colour: ColorResources
+                    //                                                 .color222222,
+                    //                                             fontWeight:
+                    //                                                 FontWeight
+                    //                                                     .w400,
+                    //                                           ),
+                    //                                         ],
+                    //                                       ),
+                    //                                     ),
+                    //                                   )
+                    //                                 : Center(
+                    //                                     child: Image.asset(
+                    //                                         allServiceList[1][
+                    //                                                     'listItem']
+                    //                                                 [index]
+                    //                                             .image),
+                    //                                   ),
+                    //                           )
+                    //                         : Container(
+                    //                             width: 74,
+                    //                             child: Center(
+                    //                               child: Image.asset(
+                    //                                   allServiceList[1]
+                    //                                               ['listItem']
+                    //                                           [index]
+                    //                                       .image),
+                    //                             ),
+                    //                           );
+                    //                   }))),
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                    //   child: Card(
+                    //     child: Padding(
+                    //       padding: const EdgeInsets.all(16.0),
+                    //       child: Column(
+                    //         children: [
+                    //           Align(
+                    //             alignment: Alignment.topLeft,
+                    //             child: Text_Widget(
+                    //               text: allServiceList[2]['name'],
+                    //               fontSize: FontSize.twenty,
+                    //               colour: ColorResources.color222222,
+                    //               fontWeight: FontWeight.w700,
+                    //             ),
+                    //           ),
+                    //           SizedBox(
+                    //               height: 80,
+                    //               child: GridView.count(
+                    //                   crossAxisCount: 4,
+                    //                   crossAxisSpacing: 0,
+                    //                   mainAxisSpacing: 8.0,
+                    //                   children: List.generate(
+                    //                       allServiceList[2]['listItem'].length <
+                    //                               3
+                    //                           ? allServiceList[2]['listItem']
+                    //                               .length
+                    //                           : 4, (index) {
+                    //                     if (allServiceList[2]['listItem']
+                    //                             .length >
+                    //                         3) {
+                    //                       return Container(
+                    //                         width: 74,
+                    //                         child: index > 2
+                    //                             ? GestureDetector(
+                    //                                 onTap: () =>
+                    //                                     customModalBottomSheet(
+                    //                                         context, 2),
+                    //                                 child: Container(
+                    //                                   child: Column(
+                    //                                     children: [
+                    //                                       Container(
+                    //                                         width: 36,
+                    //                                         height: 36,
+                    //                                         decoration:
+                    //                                             BoxDecoration(
+                    //                                           color: ColorResources
+                    //                                               .colorFFF3E9,
+                    //                                           borderRadius:
+                    //                                               BorderRadius
+                    //                                                   .circular(
+                    //                                                       20),
+                    //                                         ),
+                    //                                         child: Center(
+                    //                                           child:
+                    //                                               Text_Widget(
+                    //                                             text: "+" +
+                    //                                                 (allServiceList[2]['listItem'].length -
+                    //                                                         3)
+                    //                                                     .toString(),
+                    //                                             fontSize:
+                    //                                                 FontSize
+                    //                                                     .sixteen,
+                    //                                             colour: ColorResources
+                    //                                                 .colorFA3245,
+                    //                                             fontWeight:
+                    //                                                 FontWeight
+                    //                                                     .w700,
+                    //                                           ),
+                    //                                         ),
+                    //                                       ),
+                    //                                       Text_Widget(
+                    //                                         text: 'more',
+                    //                                         fontSize: FontSize
+                    //                                             .fourteen,
+                    //                                         colour:
+                    //                                             ColorResources
+                    //                                                 .color222222,
+                    //                                         fontWeight:
+                    //                                             FontWeight.w400,
+                    //                                       ),
+                    //                                     ],
+                    //                                   ),
+                    //                                 ),
+                    //                               )
+                    //                             : Column(
+                    //                                 mainAxisAlignment:
+                    //                                     MainAxisAlignment
+                    //                                         .center,
+                    //                                 crossAxisAlignment:
+                    //                                     CrossAxisAlignment
+                    //                                         .center,
+                    //                                 children: [
+                    //                                   Image.asset(allServiceList[
+                    //                                               2]['listItem']
+                    //                                           [index]
+                    //                                       .image),
+                    //                                   SizedBox(height: 8),
+                    //                                   Expanded(
+                    //                                     child: Align(
+                    //                                       alignment: Alignment
+                    //                                           .topCenter,
+                    //                                       child: Center(
+                    //                                         child: Text_Widget(
+                    //                                           text: allServiceList[
+                    //                                                       2][
+                    //                                                   'listItem'][0]
+                    //                                               .title,
+                    //                                           fontSize: FontSize
+                    //                                               .fourteen,
+                    //                                           colour:
+                    //                                               ColorResources
+                    //                                                   .color222222,
+                    //                                           fontWeight:
+                    //                                               FontWeight
+                    //                                                   .w400,
+                    //                                         ),
+                    //                                       ),
+                    //                                     ),
+                    //                                   ),
+                    //                                 ],
+                    //                               ),
+                    //                       );
+                    //                     } else {
+                    //                       return Container(
+                    //                         width: 74,
+                    //                         child: Column(
+                    //                           mainAxisAlignment:
+                    //                               MainAxisAlignment.center,
+                    //                           crossAxisAlignment:
+                    //                               CrossAxisAlignment.center,
+                    //                           children: [
+                    //                             Image.asset(allServiceList[2]
+                    //                                     ['listItem'][1]
+                    //                                 .image),
+                    //                             SizedBox(height: 8),
+                    //                             Expanded(
+                    //                               child: Align(
+                    //                                 alignment:
+                    //                                     Alignment.topCenter,
+                    //                                 child: Center(
+                    //                                   child: Text_Widget(
+                    //                                     text: allServiceList[2]
+                    //                                                 ['listItem']
+                    //                                             [index]
+                    //                                         .title,
+                    //                                     fontSize:
+                    //                                         FontSize.fourteen,
+                    //                                     colour: ColorResources
+                    //                                         .color222222,
+                    //                                     fontWeight:
+                    //                                         FontWeight.w400,
+                    //                                   ),
+                    //                                 ),
+                    //                               ),
+                    //                             ),
+                    //                           ],
+                    //                         ),
+                    //                       );
+                    //                     }
+                    //                   }))),
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -622,7 +612,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
 
   Future<dynamic> customModalBottomSheet(BuildContext context, int i) {
     return showModalBottomSheet(
-        isScrollControlled: false,
+        isScrollControlled: true,
         context: context,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -635,7 +625,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
               decoration: new BoxDecoration(
                   color: Colors.white,
                   borderRadius: new BorderRadius.circular(32)),
-              child: Column(
+              child: Wrap(
                 children: [
                   ListTile(
                     leading: GestureDetector(
