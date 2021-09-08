@@ -1,7 +1,6 @@
 import 'package:assessment/data/ThemeNotifier.dart';
 import 'package:assessment/data/color.dart';
 import 'package:assessment/screens/Setting_screen/setting_screen.dart';
-import 'package:assessment/screens/ThemeNotifier/bloc/theme_bloc.dart';
 import 'package:assessment/screens/biometric_screen/biometric_screen.dart';
 import 'package:assessment/screens/home_tab_screen/home_tab_screen.dart';
 import 'package:assessment/screens/refer_earn_screen/refer_earn_screen.dart';
@@ -45,12 +44,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late bool boolValue = false;
-  late ThemeBloc themeBloc;
   @override
   void initState() {
     super.initState();
     checkFingerPrint();
-    themeBloc = ThemeBloc()..add(ThemeIntial());
   }
 
   void checkFingerPrint() async {
@@ -63,19 +60,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
-    return BlocListener<ThemeBloc, ThemeState>(
-      bloc: themeBloc,
-      listener: (context, state) {},
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: themeNotifier.getTheme(),
-        // darkTheme: ThemeData(
-        //   primarySwatch: Colors.blue,
-        //   primaryColor: ColorResources.color51063A,
-        // ),
-        //home: boolValue ? BiometricScreen() : SettingsScreen(),
-        home: HometabScreen(),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: themeNotifier.getTheme(),
+      // darkTheme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      //   primaryColor: ColorResources.color51063A,
+      // ),
+      //home: boolValue ? BiometricScreen() : SettingsScreen(),
+      home: HometabScreen(),
     );
   }
 }

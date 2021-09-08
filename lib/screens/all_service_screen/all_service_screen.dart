@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:assessment/Widget/text_widget.dart';
 import 'package:assessment/data/more_option_list.dart';
-import 'package:assessment/screens/ThemeNotifier/bloc/theme_bloc.dart';
 import 'package:assessment/screens/all_service_screen/bloc/service_bloc.dart';
 import 'package:assessment/utils/color_resource.dart';
 import 'package:assessment/utils/font.dart';
@@ -103,7 +102,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height - 110,
                       child: ListView.builder(
-                          itemCount: allServiceList.length,
+                          itemCount: newAllServiceList.length,
                           itemBuilder: (BuildContext context, int i) {
                             return Padding(
                               padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
@@ -115,92 +114,163 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                       Align(
                                         alignment: Alignment.topLeft,
                                         child: Text_Widget(
-                                          text: allServiceList[i]['name'],
+                                          text: newAllServiceList[i]
+                                              .titleName
+                                              .toString(),
                                           fontSize: FontSize.twenty,
                                           colour: ColorResources.color222222,
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
                                       SizedBox(
-                                          height: (i == 2 ? 80 : 181),
+                                          height:
+                                              (newAllServiceList[i].noOfRow *
+                                                  90.0),
                                           child: GridView.count(
                                               crossAxisCount: 4,
                                               crossAxisSpacing: 0,
                                               mainAxisSpacing: 8.0,
                                               children: List.generate(
-                                                  allServiceList[i]['listItem']
+                                                  newAllServiceList[i]
+                                                              .ListOfIcons
                                                               .length <
-                                                          (i == 2 ? 3 : 7)
-                                                      ? allServiceList[i]
-                                                              ['listItem']
+                                                          (newAllServiceList[i]
+                                                                      .noOfRow *
+                                                                  4) -
+                                                              1
+                                                      ? newAllServiceList[i]
+                                                          .ListOfIcons
                                                           .length
-                                                      : (i == 2 ? 4 : 8),
-                                                  (index) {
-                                                return allServiceList[i]
-                                                                ['listItem']
+                                                      : (newAllServiceList[i]
+                                                              .noOfRow *
+                                                          4), (index) {
+                                                return newAllServiceList[i]
+                                                            .ListOfIcons
                                                             .length >
-                                                        (i == 2 ? 2 : 6)
+                                                        (newAllServiceList[i]
+                                                                    .noOfRow *
+                                                                4) -
+                                                            2
                                                     ? Container(
                                                         width: 74,
                                                         child: index >
-                                                                (i == 2 ? 2 : 6)
+                                                                (newAllServiceList[i]
+                                                                            .noOfRow *
+                                                                        4) -
+                                                                    2
                                                             ? GestureDetector(
                                                                 onTap: () =>
                                                                     customModalBottomSheet(
                                                                         context,
                                                                         i),
-                                                                child: (allServiceList[i]['listItem'].length -
-                                                                            (i == 2
-                                                                                ? 3
-                                                                                : 7) <=
+                                                                child: (newAllServiceList[i].ListOfIcons.length -
+                                                                            (newAllServiceList[i].noOfRow *
+                                                                                4) -
+                                                                            1 <=
                                                                         0)
                                                                     ? SizedBox()
-                                                                    : Container(
+                                                                    : Align(
+                                                                        alignment:
+                                                                            Alignment.bottomCenter,
                                                                         child:
-                                                                            Column(
-                                                                          children: [
                                                                             Container(
-                                                                              width: 36,
-                                                                              height: 36,
-                                                                              decoration: BoxDecoration(
-                                                                                color: ColorResources.colorFFF3E9,
-                                                                                borderRadius: BorderRadius.circular(20),
-                                                                              ),
-                                                                              child: Center(
-                                                                                child: Text_Widget(
-                                                                                  text: "+" + (allServiceList[i]['listItem'].length - (i == 2 ? 4 : 8)).toString(),
-                                                                                  fontSize: FontSize.sixteen,
-                                                                                  colour: ColorResources.colorFA3245,
-                                                                                  fontWeight: FontWeight.w700,
+                                                                          child:
+                                                                              Column(
+                                                                            children: [
+                                                                              Container(
+                                                                                width: 36,
+                                                                                height: 36,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: ColorResources.colorFFF3E9,
+                                                                                  borderRadius: BorderRadius.circular(20),
+                                                                                ),
+                                                                                child: Center(
+                                                                                  child: Text_Widget(
+                                                                                    text: "+" + (newAllServiceList[i].ListOfIcons.length - (newAllServiceList[i].noOfRow * 4)).toString(),
+                                                                                    fontSize: FontSize.sixteen,
+                                                                                    colour: ColorResources.colorFA3245,
+                                                                                    fontWeight: FontWeight.w700,
+                                                                                  ),
                                                                                 ),
                                                                               ),
-                                                                            ),
-                                                                            Text_Widget(
-                                                                              text: 'more',
-                                                                              fontSize: FontSize.fourteen,
-                                                                              colour: ColorResources.color222222,
-                                                                              fontWeight: FontWeight.w400,
-                                                                            ),
-                                                                          ],
+                                                                              Text_Widget(
+                                                                                text: 'more',
+                                                                                fontSize: FontSize.fourteen,
+                                                                                colour: ColorResources.color222222,
+                                                                                fontWeight: FontWeight.w400,
+                                                                              ),
+                                                                            ],
+                                                                          ),
                                                                         ),
                                                                       ),
                                                               )
-                                                            : Center(
-                                                                child: Image.asset(
-                                                                    allServiceList[i]['listItem']
-                                                                            [
+                                                            : Column(
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Center(
+                                                                    child: Image.asset(newAllServiceList[
+                                                                            i]
+                                                                        .ListOfIcons[
                                                                             index]
-                                                                        .image),
+                                                                        .icon),
+                                                                  ),
+                                                                  Center(
+                                                                    child:
+                                                                        Text_Widget(
+                                                                      text: newAllServiceList[
+                                                                              i]
+                                                                          .ListOfIcons[
+                                                                              index]
+                                                                          .name,
+                                                                      colour: ColorResources
+                                                                          .color222222,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w400,
+                                                                      fontSize:
+                                                                          FontSize
+                                                                              .twelve,
+                                                                    ),
+                                                                  )
+                                                                ],
                                                               ),
                                                       )
                                                     : Container(
                                                         width: 74,
-                                                        child: Center(
-                                                          child: Image.asset(
-                                                              allServiceList[i][
-                                                                          'listItem']
-                                                                      [index]
-                                                                  .image),
+                                                        child: Column(
+                                                          children: [
+                                                            Center(
+                                                              child: Image.asset(
+                                                                  newAllServiceList[
+                                                                          i]
+                                                                      .ListOfIcons[
+                                                                          index]
+                                                                      .icon),
+                                                            ),
+                                                            Center(
+                                                              child:
+                                                                  Text_Widget(
+                                                                text: newAllServiceList[
+                                                                        i]
+                                                                    .ListOfIcons[
+                                                                        index]
+                                                                    .name,
+                                                                colour: ColorResources
+                                                                    .color222222,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400,
+                                                                fontSize:
+                                                                    FontSize
+                                                                        .twelve,
+                                                              ),
+                                                            )
+                                                          ],
                                                         ),
                                                       );
                                               }))),
@@ -211,6 +281,119 @@ class _ServiceScreenState extends State<ServiceScreen> {
                             );
                           }),
                     ),
+                    // SizedBox(
+                    //   height: MediaQuery.of(context).size.height - 110,
+                    //   child: ListView.builder(
+                    //       itemCount: allServiceList.length,
+                    //       itemBuilder: (BuildContext context, int i) {
+                    //         return Padding(
+                    //           padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                    //           child: Card(
+                    //             child: Padding(
+                    //               padding: const EdgeInsets.all(16.0),
+                    //               child: Column(
+                    //                 children: [
+                    //                   Align(
+                    //                     alignment: Alignment.topLeft,
+                    //                     child: Text_Widget(
+                    //                       text: allServiceList[i]['name'],
+                    //                       fontSize: FontSize.twenty,
+                    //                       colour: ColorResources.color222222,
+                    //                       fontWeight: FontWeight.w700,
+                    //                     ),
+                    //                   ),
+                    //                   SizedBox(
+                    //                       height: (i == 2 ? 80 : 181),
+                    //                       child: GridView.count(
+                    //                           crossAxisCount: 4,
+                    //                           crossAxisSpacing: 0,
+                    //                           mainAxisSpacing: 8.0,
+                    //                           children: List.generate(
+                    //                               allServiceList[i]['listItem']
+                    //                                           .length <
+                    //                                       (i == 2 ? 3 : 7)
+                    //                                   ? allServiceList[i]
+                    //                                           ['listItem']
+                    //                                       .length
+                    //                                   : (i == 2 ? 4 : 8),
+                    //                               (index) {
+                    //                             return allServiceList[i]
+                    //                                             ['listItem']
+                    //                                         .length >
+                    //                                     (i == 2 ? 2 : 6)
+                    //                                 ? Container(
+                    //                                     width: 74,
+                    //                                     child: index >
+                    //                                             (i == 2 ? 2 : 6)
+                    //                                         ? GestureDetector(
+                    //                                             onTap: () =>
+                    //                                                 customModalBottomSheet(
+                    //                                                     context,
+                    //                                                     i),
+                    //                                             child: (allServiceList[i]['listItem'].length -
+                    //                                                         (i == 2
+                    //                                                             ? 3
+                    //                                                             : 7) <=
+                    //                                                     0)
+                    //                                                 ? SizedBox()
+                    //                                                 : Container(
+                    //                                                     child:
+                    //                                                         Column(
+                    //                                                       children: [
+                    //                                                         Container(
+                    //                                                           width: 36,
+                    //                                                           height: 36,
+                    //                                                           decoration: BoxDecoration(
+                    //                                                             color: ColorResources.colorFFF3E9,
+                    //                                                             borderRadius: BorderRadius.circular(20),
+                    //                                                           ),
+                    //                                                           child: Center(
+                    //                                                             child: Text_Widget(
+                    //                                                               text: "+" + (allServiceList[i]['listItem'].length - (i == 2 ? 4 : 8)).toString(),
+                    //                                                               fontSize: FontSize.sixteen,
+                    //                                                               colour: ColorResources.colorFA3245,
+                    //                                                               fontWeight: FontWeight.w700,
+                    //                                                             ),
+                    //                                                           ),
+                    //                                                         ),
+                    //                                                         Text_Widget(
+                    //                                                           text: 'more',
+                    //                                                           fontSize: FontSize.fourteen,
+                    //                                                           colour: ColorResources.color222222,
+                    //                                                           fontWeight: FontWeight.w400,
+                    //                                                         ),
+                    //                                                       ],
+                    //                                                     ),
+                    //                                                   ),
+                    //                                           )
+                    //                                         : Center(
+                    //                                             child: Image.asset(
+                    //                                                 allServiceList[i]['listItem']
+                    //                                                         [
+                    //                                                         index]
+                    //                                                     .image),
+                    //                                           ),
+                    //                                   )
+                    //                                 : Container(
+                    //                                     width: 74,
+                    //                                     child: Center(
+                    //                                       child: Image.asset(
+                    //                                           allServiceList[i][
+                    //                                                       'listItem']
+                    //                                                   [index]
+                    //                                               .image),
+                    //                                     ),
+                    //                                   );
+                    //                           }))),
+                    //                 ],
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         );
+                    //       }),
+                    // ),
+
+                    //===============================================
                     // Padding(
                     //   padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                     //   child: Card(
@@ -649,6 +832,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                           fontWeight: FontWeight.w700),
                     ),
                   ),
+                  SizedBox(height: 5),
                   new Center(
                     child: SizedBox(
                         height: 350,
@@ -657,12 +841,27 @@ class _ServiceScreenState extends State<ServiceScreen> {
                             crossAxisSpacing: 0,
                             mainAxisSpacing: 8.0,
                             children: List.generate(
-                                allServiceList[i]['listItem'].length, (index) {
+                                newAllServiceList[i].ListOfIcons.length,
+                                (index) {
                               return Container(
-                                child: Center(
-                                  child: Image.asset(allServiceList[i]
-                                          ['listItem'][index]
-                                      .image),
+                                child: Column(
+                                  children: [
+                                    Center(
+                                      child: Image.asset(newAllServiceList[i]
+                                          .ListOfIcons[index]
+                                          .icon),
+                                    ),
+                                    Center(
+                                      child: Text_Widget(
+                                        text: newAllServiceList[i]
+                                            .ListOfIcons[index]
+                                            .name,
+                                        colour: ColorResources.color222222,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: FontSize.twelve,
+                                      ),
+                                    )
+                                  ],
                                 ),
                               );
                             }))),

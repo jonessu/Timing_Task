@@ -25,21 +25,22 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   late SettingsBloc settingsBloc;
   late bool switchValue = false;
-  File? image;
+  //File? image;
   String path = "";
   Future pickImageFromGallery() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
       final image = await ImagePicker().pickImage(source: ImageSource.gallery);
       if (image == null) return;
-      final imageTemporary = File(image.path);
+      //final imageTemporary = File(image.path);
 
       setState(() {
-        this.image = imageTemporary;
+        //this.image = imageTemporary;
         this.path = image.path;
       });
       print(path);
-      prefs.setString('profileImage', path);
+      SharedPreferences.getInstance().then((pref) {
+        pref.setString('profileImage', path);
+      });
     } catch (e) {
       print(e);
     }
@@ -49,17 +50,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void initState() {
     super.initState();
     settingsBloc = SettingsBloc()..add(SettingsInitailEvent());
-    //getImage();
+    print(cardThemeList);
+    getImage();
   }
 
-  // getImage() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   setState(() {
-  //     this.path = prefs.getString('profileImage') ?? "";
-  //     this.switchValue = prefs.getBool('fingerAuth') ?? false;
-  //     print(path);
-  //   });
-  // }
+  getImage() async {
+    setState(() {
+      SharedPreferences.getInstance().then((pref) {
+        this.path = pref.getString('profileImage') ?? "";
+        this.switchValue = pref.getBool('fingerAuth') ?? false;
+        print(path);
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -363,125 +366,128 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         //     ],
                         //   ),
                         // ),
-                        ListView.builder(
-                            physics: NeverScrollableScrollPhysics(),
-                            shrinkWrap: true,
-                            itemCount: list.length,
-                            itemBuilder: (contex, i) {
-                              return Column(
-                                children: [
-                                  SizedBox(height: FontSize.thirtytwo),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: FontSize.twelve),
-                                    child: Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Text_Widget(
-                                        text: list[i][StringResource.name],
-                                        fontSize: FontSize.twenty,
-                                        colour: ColorResources.color222222,
-                                        fontWeight: FontWeights.normal,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(height: FontSize.twelve),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(15),
-                                      color: Colors.white,
-                                      border: Border.all(
-                                        color: ColorResources.colorFFFFFF,
-                                        width: 1,
-                                      ),
-                                    ),
-                                    child: ListView.builder(
-                                      physics: NeverScrollableScrollPhysics(),
-                                      shrinkWrap: true,
-                                      itemCount: list[i]
-                                              [StringResource.listItem]
-                                          .length,
-                                      itemBuilder: (context, index) {
-                                        return GestureDetector(
-                                          onTap: () {
-                                            if (list[i][StringResource.listItem]
-                                                        [index]
-                                                    [StringResource.text] ==
-                                                StringResource.ReferandEarn) {
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          ReferearnScreen()));
-                                            }
-                                          },
-                                          child: ListTile(
-                                            leading: Image.asset(list[i]
-                                                    [StringResource.listItem]
-                                                [index][StringResource.image]),
-                                            title: Text_Widget(
-                                              text: list[i]
-                                                      [StringResource.listItem]
-                                                  [index][StringResource.text],
-                                              fontSize: FontSize.sixteen,
-                                              colour: list[i]
-                                                      [StringResource.listItem][
-                                                  index][StringResource.colour],
-                                              fontWeight: FontWeights.normal,
-                                            ),
-                                            trailing: list[i][StringResource
-                                                            .listItem][index]
-                                                        [StringResource.text] ==
-                                                    StringResource
-                                                        .SecurewithFaceID
-                                                ? CupertinoSwitch(
-                                                    trackColor: ColorResources
-                                                        .color222222,
-                                                    activeColor:
-                                                        Theme.of(context)
-                                                            .primaryColor,
-                                                    value: switchValue,
-                                                    onChanged:
-                                                        (newvalue) async {
-                                                      SharedPreferences prefs =
-                                                          await SharedPreferences
-                                                              .getInstance();
-                                                      prefs.setBool(
-                                                          'fingerAuth',
-                                                          newvalue);
+                        //-------------------------------------------------------------
 
-                                                      setState(() {
-                                                        switchValue = newvalue;
-                                                        showDialog(
-                                                          context: context,
-                                                          builder: (_) =>
-                                                              AlertDialog(
-                                                            title: const Text(
-                                                                StringResource
-                                                                    .SwichChangeSuccessfully),
-                                                            content: Text(StringResource
-                                                                    .Switchvalueis +
-                                                                switchValue
-                                                                    .toString()),
-                                                          ),
-                                                        );
-                                                      });
-                                                    },
-                                                  )
-                                                : Icon(
-                                                    list[i][StringResource
-                                                            .listItem][index]
-                                                        [StringResource.icon],
-                                                    color: ColorResources
-                                                        .colorFF781F,
-                                                    size: FontSize.sixteen,
-                                                  ),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                ],
-                              );
-                            }),
+                        // ListView.builder(
+                        //     physics: NeverScrollableScrollPhysics(),
+                        //     shrinkWrap: true,
+                        //     itemCount: list.length,
+                        //     itemBuilder: (contex, i) {
+                        //       return Column(
+                        //         children: [
+                        //           SizedBox(height: FontSize.thirtytwo),
+                        //           Padding(
+                        //             padding: const EdgeInsets.only(
+                        //                 left: FontSize.twelve),
+                        //             child: Align(
+                        //               alignment: Alignment.centerLeft,
+                        //               child: Text_Widget(
+                        //                 text: list[i][StringResource.name],
+                        //                 fontSize: FontSize.twenty,
+                        //                 colour: ColorResources.color222222,
+                        //                 fontWeight: FontWeights.normal,
+                        //               ),
+                        //             ),
+                        //           ),
+                        //           SizedBox(height: FontSize.twelve),
+                        //           Container(
+                        //             decoration: BoxDecoration(
+                        //               borderRadius: BorderRadius.circular(15),
+                        //               color: Colors.white,
+                        //               border: Border.all(
+                        //                 color: ColorResources.colorFFFFFF,
+                        //                 width: 1,
+                        //               ),
+                        //             ),
+                        //             child: ListView.builder(
+                        //               physics: NeverScrollableScrollPhysics(),
+                        //               shrinkWrap: true,
+                        //               itemCount: list[i]
+                        //                       [StringResource.listItem]
+                        //                   .length,
+                        //               itemBuilder: (context, index) {
+                        //                 return GestureDetector(
+                        //                   onTap: () {
+                        //                     if (list[i][StringResource.listItem]
+                        //                                 [index]
+                        //                             [StringResource.text] ==
+                        //                         StringResource.ReferandEarn) {
+                        //                       Navigator.of(context).push(
+                        //                           MaterialPageRoute(
+                        //                               builder: (context) =>
+                        //                                   ReferearnScreen()));
+                        //                     }
+                        //                   },
+                        //                   child: ListTile(
+                        //                     leading: Image.asset(list[i]
+                        //                             [StringResource.listItem]
+                        //                         [index][StringResource.image]),
+                        //                     title: Text_Widget(
+                        //                       text: list[i]
+                        //                               [StringResource.listItem]
+                        //                           [index][StringResource.text],
+                        //                       fontSize: FontSize.sixteen,
+                        //                       colour: list[i]
+                        //                               [StringResource.listItem][
+                        //                           index][StringResource.colour],
+                        //                       fontWeight: FontWeights.normal,
+                        //                     ),
+                        //                     trailing: list[i][StringResource
+                        //                                     .listItem][index]
+                        //                                 [StringResource.text] ==
+                        //                             StringResource
+                        //                                 .SecurewithFaceID
+                        //                         ? CupertinoSwitch(
+                        //                             trackColor: ColorResources
+                        //                                 .color222222,
+                        //                             activeColor:
+                        //                                 Theme.of(context)
+                        //                                     .primaryColor,
+                        //                             value: switchValue,
+                        //                             onChanged:
+                        //                                 (newvalue) async {
+                        //                               SharedPreferences
+                        //                                       .getInstance()
+                        //                                   .then((pref) {
+                        //                                 pref.setBool(
+                        //                                     'fingerAuth',
+                        //                                     newvalue);
+                        //                               });
+
+                        //                               setState(() {
+                        //                                 switchValue = newvalue;
+                        //                                 showDialog(
+                        //                                   context: context,
+                        //                                   builder: (_) =>
+                        //                                       AlertDialog(
+                        //                                     title: const Text(
+                        //                                         StringResource
+                        //                                             .SwichChangeSuccessfully),
+                        //                                     content: Text(StringResource
+                        //                                             .Switchvalueis +
+                        //                                         switchValue
+                        //                                             .toString()),
+                        //                                   ),
+                        //                                 );
+                        //                               });
+                        //                             },
+                        //                           )
+                        //                         : Icon(
+                        //                             list[i][StringResource
+                        //                                     .listItem][index]
+                        //                                 [StringResource.icon],
+                        //                             color: ColorResources
+                        //                                 .colorFF781F,
+                        //                             size: FontSize.sixteen,
+                        //                           ),
+                        //                   ),
+                        //                 );
+                        //               },
+                        //             ),
+                        //           ),
+                        //         ],
+                        //       );
+                        //     }),
                       ],
                     ),
                   ),

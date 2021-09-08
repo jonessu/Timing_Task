@@ -2,7 +2,6 @@ import 'package:assessment/Widget/text_widget.dart';
 import 'package:assessment/data/ThemeNotifier.dart';
 import 'package:assessment/data/color.dart';
 import 'package:assessment/data/more_option_list.dart';
-import 'package:assessment/screens/ThemeNotifier/bloc/theme_bloc.dart';
 import 'package:assessment/screens/accounts_screen/bloc/account_bloc.dart';
 import 'package:assessment/utils/color_resource.dart';
 import 'package:assessment/utils/font.dart';
@@ -23,7 +22,6 @@ class AccountScreen extends StatefulWidget {
 
 class _AccountScreenState extends State<AccountScreen> {
   late AccountBloc accountBloc;
-  late ThemeBloc themeBloc;
   late int selectedValue = 1;
   late int selectedCardValue = 0;
   late int tabBarValue = 0;
@@ -34,7 +32,6 @@ class _AccountScreenState extends State<AccountScreen> {
   void initState() {
     super.initState();
     accountBloc = AccountBloc()..add(AccountInitailEvent());
-    themeBloc = ThemeBloc()..add(ThemeIntial());
 
     SharedPreferences.getInstance().then((pref) {
       setState(() {

@@ -32,45 +32,51 @@ class ImageResource {
       'images/ApplyforPocketsCard.png';
   static const String ScantoPayIcon = 'images/scantopay.png';
 
-  static const String all_service_pay_to_contacts =
-      'images/all_service_pay_to_contacts.png';
-  static const String all_service_fund_transfer =
-      'images/all_service_fund_transfer.png';
-  static const String all_service_upi = 'images/all_service_upi.png';
-  static const String all_service_add_funds =
-      'images/all_service_add_funds.png';
-  static const String all_service_request_money =
-      'images/all_service_request_money.png';
-  static const String all_service_apply_for_pockets_card =
-      'images/all_service_apply_for_pockets_card.png';
-  static const String all_service_scan_to_pay =
-      'images/all_service_scan_to_pay.png';
-  static const String all_service_bill_pay = 'images/all_service_bill_pay.png';
-  static const String all_service_recharge = 'images/all_service_recharge.png';
-  static const String all_service_fastag = 'images/all_service_fastag.png';
-  static const String all_service_paypal = 'images/all_service_paypal.png';
-  static const String all_service_offers = 'images/all_service_offers.png';
-  static const String all_service_cash_karo_earning =
-      'images/all_service_cash_karo_earning.png';
-  static const String all_service_split_bills =
-      'images/all_service_split_bills.png';
-  static const String all_service_savings_account =
-      'images/all_service_savings_account.png';
-  static const String all_service_prepaid_card =
-      'images/all_service_prepaid_card.png';
-  static const String all_service_personal_loan =
-      'images/all_service_personal_loan.png';
-  static const String all_service_two_wheeler_loan =
-      'images/all_service_two_wheeler_loan.png';
-  static const String all_service_wallet_protection_plan =
-      'images/all_service_wallet_protection_plan.png';
-  static const String all_service_card_protection_plan =
-      'images/all_service_card_protection_plan.png';
-  static const String all_service_mutual_funds =
-      'images/all_service_mutual_funds.png';
-  static const String all_service_fdrd = 'images/all_service_fdrd.png';
-  static const String all_service_i_wish = 'images/all_service_i_wish.png';
-  static const String all_service_pay_later =
-      'images/all_service_pay_later.png';
-  static const String all_service_kyc = 'images/all_service_kyc.png';
+  static const String new_all_service_pay_to_contacts =
+      'images/new_all_service_pay_to_contacts.png';
+  static const String new_all_service_fund_transfer =
+      'images/new_all_service_fund_transfer.png';
+  static const String new_all_service_upi = 'images/new_all_service_upi.png';
+  static const String new_all_service_add_funds =
+      'images/new_all_service_add_funds.png';
+  static const String new_all_service_request_money =
+      'images/new_all_service_request_money.png';
+  static const String new_all_service_apply_for_pockets_card =
+      'images/new_all_service_apply_for_pockets_card.png';
+  static const String new_all_service_scan_to_pay =
+      'images/new_all_service_scan_to_pay.png';
+  static const String new_all_service_bill_pay =
+      'images/new_all_service_bill_pay.png';
+  static const String new_all_service_recharge =
+      'images/new_all_service_recharge.png';
+  static const String new_all_service_fastag =
+      'images/new_all_service_fastag.png';
+  static const String new_all_service_paypal =
+      'images/new_all_service_paypal.png';
+  static const String new_all_service_offers =
+      'images/new_all_service_offers.png';
+  static const String new_all_service_cash_karo_earning =
+      'images/new_all_service_cash_karo_earnings.png';
+  static const String new_all_service_split_bills =
+      'images/new_all_service_split_bills.png';
+  static const String new_all_service_savings_account =
+      'images/new_all_service_savings_account.png';
+  static const String new_all_service_prepaid_card =
+      'images/new_all_service_pre_paid_card.png';
+  static const String new_all_service_personal_loan =
+      'images/new_all_service_personal_loan.png';
+  static const String new_all_service_two_wheeler_loan =
+      'images/new_all_service_two_wheeler_loan.png';
+  static const String new_all_service_wallet_protection_plan =
+      'images/new_all_service_wallet_protection_plan.png';
+  static const String new_all_service_card_protection_plan =
+      'images/new_all_service_card_protection_plan.png';
+  static const String new_all_service_mutual_funds =
+      'images/new_all_service_mutual_funds.png';
+  static const String new_all_service_fdrd = 'images/new_all_service_fdrd.png';
+  static const String new_all_service_i_wish =
+      'images/new_all_service_iwish.png';
+  static const String new_all_service_pay_later =
+      'images/new_all_service_pay_later.png';
+  static const String new_all_service_kyc = 'images/new_all_service_kyc.png';
 }
