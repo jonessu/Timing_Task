@@ -26,42 +26,11 @@ class HometabScreen extends StatefulWidget {
 
 class _HometabScreenState extends State<HometabScreen> {
   late HometabBloc hometabBloc;
-  late bool switchValue = false;
-  File? image;
-  String path = "";
-  Future pickImageFromGallery() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    try {
-      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (image == null) return;
-      final imageTemporary = File(image.path);
-
-      setState(() {
-        this.image = imageTemporary;
-        this.path = image.path;
-      });
-      print(path);
-      prefs.setString('profileImage', path);
-    } catch (e) {
-      print(e);
-    }
-  }
 
   @override
   void initState() {
     super.initState();
     hometabBloc = HometabBloc()..add(HometabInitailEvent());
-    print(list.length);
-    getImage();
-  }
-
-  getImage() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      this.path = prefs.getString('profileImage') ?? "";
-      this.switchValue = prefs.getBool('fingerAuth') ?? false;
-      print(path);
-    });
   }
 
   @override

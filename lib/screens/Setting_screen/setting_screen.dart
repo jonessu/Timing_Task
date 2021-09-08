@@ -49,18 +49,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void initState() {
     super.initState();
     settingsBloc = SettingsBloc()..add(SettingsInitailEvent());
-    print(list.length);
-    getImage();
+    //getImage();
   }
 
-  getImage() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      this.path = prefs.getString('profileImage') ?? "";
-      this.switchValue = prefs.getBool('fingerAuth') ?? false;
-      print(path);
-    });
-  }
+  // getImage() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   setState(() {
+  //     this.path = prefs.getString('profileImage') ?? "";
+  //     this.switchValue = prefs.getBool('fingerAuth') ?? false;
+  //     print(path);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {

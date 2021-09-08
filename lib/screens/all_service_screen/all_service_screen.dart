@@ -168,7 +168,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                                                               ),
                                                                               child: Center(
                                                                                 child: Text_Widget(
-                                                                                  text: "+" + (allServiceList[i]['listItem'].length - (i == 2 ? 3 : 7)).toString(),
+                                                                                  text: "+" + (allServiceList[i]['listItem'].length - (i == 2 ? 4 : 8)).toString(),
                                                                                   fontSize: FontSize.sixteen,
                                                                                   colour: ColorResources.colorFA3245,
                                                                                   fontWeight: FontWeight.w700,
