@@ -1,5 +1,5 @@
 import 'package:assessment/Widget/text_widget.dart';
-import 'package:assessment/screens/refer_earn_screen/bloc/referearn_bloc.dart';
+import 'package:assessment/screens/all_service_screen/bloc/service_bloc.dart';
 import 'package:assessment/utils/color_resource.dart';
 import 'package:assessment/utils/font.dart';
 import 'package:assessment/utils/string_resource.dart';
@@ -16,13 +16,13 @@ class SearchContact extends StatefulWidget {
 
 class _SearchContactState extends State<SearchContact> {
   TextEditingController searchController = new TextEditingController();
-  late ReferearnBloc referearnBloc;
+  late ServiceBloc serviceBloc;
 
   @override
   void initState() {
     super.initState();
 
-    referearnBloc = ReferearnBloc()..add(SearchInitailEvent());
+    serviceBloc = ServiceBloc()..add(SearchInitailEvent());
   }
 
   List<Contact> searchList = [];
@@ -31,14 +31,14 @@ class _SearchContactState extends State<SearchContact> {
     List<Contact> results = [];
     searchList = [];
     if (enteredKeyword.isEmpty) {
-      results = referearnBloc.foundUsers;
+      //results = serviceBloc.foundUsers;
     } else {
-      results = referearnBloc.foundUsers
-          .where((user) => user.displayName
-              .toString()
-              .toLowerCase()
-              .contains(enteredKeyword.toLowerCase()))
-          .toList();
+      // results = serviceBloc.foundUsers
+      //     .where((user) => user.displayName
+      //         .toString()
+      //         .toLowerCase()
+      //         .contains(enteredKeyword.toLowerCase()))
+      //     .toList();
     }
     setState(() {
       searchList = results;
@@ -47,13 +47,11 @@ class _SearchContactState extends State<SearchContact> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<ReferearnBloc, ReferearnState>(
-      bloc: referearnBloc,
-      listener: (context, state) {
-        // TODO: implement listener
-      },
-      child: BlocBuilder<ReferearnBloc, ReferearnState>(
-        bloc: referearnBloc,
+    return BlocListener<ServiceBloc, ServiceState>(
+      bloc: serviceBloc,
+      listener: (context, state) {},
+      child: BlocBuilder<ServiceBloc, ServiceState>(
+        bloc: serviceBloc,
         builder: (context, state) {
           if (state is SearchLoadingState) {
             return Scaffold(

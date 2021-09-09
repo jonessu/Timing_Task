@@ -4,3 +4,5 @@ part of 'service_bloc.dart';
 abstract class ServiceEvent {}
 
 class ServiceInitailEvent extends ServiceEvent {}
+
+class SearchInitailEvent extends ServiceEvent {}

@@ -173,29 +173,29 @@ List newAllServiceList = [
         AllServiceChildModel(
             icon: ImageResource.new_all_service_pay_to_contacts,
             name: 'Pay to \nContacts',
-            title: 'Pay to Contacts'),
+            title: 'Payments'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_fund_transfer,
             name: 'Fund \nTransfer',
-            title: 'Fund Transfer'),
+            title: 'Payments'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_upi, name: 'UPI', title: 'UPI'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_add_funds,
             name: 'Add \nFunds',
-            title: 'Add Funds'),
+            title: 'Payments'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_request_money,
             name: 'Request \nMoney',
-            title: 'Request Money'),
+            title: 'Payments'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_apply_for_pockets_card,
             name: 'Apply for \nPockets Card',
-            title: 'Apply for Pockets Card'),
+            title: 'Payments'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_scan_to_pay,
             name: 'Scan to \nPay',
-            title: 'Scan to Pay'),
+            title: 'Payments'),
       ]),
   AllServiceMainModel('Recharge, Bills & Offers',
       titleName: 'Recharge, Bills & Offers',
@@ -204,77 +204,77 @@ List newAllServiceList = [
         AllServiceChildModel(
             icon: ImageResource.new_all_service_bill_pay,
             name: 'Bill Pay',
-            title: 'Bill Pay'),
+            title: 'Recharge, Bills & Offers'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_recharge,
             name: 'Recharge',
-            title: 'Recharge'),
+            title: 'Recharge, Bills & Offers'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_fastag,
             name: 'FASTag',
-            title: 'FASTag'),
+            title: 'Recharge, Bills & Offers'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_paypal,
             name: 'PayPal',
-            title: 'PayPal'),
+            title: 'Recharge, Bills & Offers'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_apply_for_pockets_card,
             name: 'Offers',
-            title: 'Offers'),
+            title: 'Recharge, Bills & Offers'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_scan_to_pay,
             name: 'CashKaro \nEarnings',
-            title: 'Cash Karo Earnings'),
+            title: 'Recharge, Bills & Offers'),
       ]),
-  AllServiceMainModel('Payments', titleName: 'Bank', noOfRow: 1, ListOfIcons: [
+  AllServiceMainModel('Bank', titleName: 'Bank', noOfRow: 1, ListOfIcons: [
     AllServiceChildModel(
         icon: ImageResource.new_all_service_pay_to_contacts,
         name: 'Split \nBills',
-        title: 'Split Bills'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_fund_transfer,
         name: 'Savings \nAccount',
-        title: 'Savings Account'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_upi,
         name: 'Prepaid \nCard',
-        title: 'Prepaid Card'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_upi,
         name: 'Personal \nLoan',
-        title: 'Personal Loan'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_add_funds,
         name: 'Two \nWheeler \nLoan',
-        title: 'Two Wheeler Loan'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_pay_to_contacts,
         name: 'Wallet \nProtection \nPlan',
-        title: 'Wallet Protection Plan'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_fund_transfer,
         name: 'Card \nProtection \nPlan',
-        title: 'Card Protection Plan'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_upi,
         name: 'Mutual \nFunds',
-        title: 'Mutual Funds'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_add_funds,
         name: 'FD/RD',
-        title: 'FD/RD'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_request_money,
         name: 'iWish',
-        title: 'iWish'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_apply_for_pockets_card,
         name: 'Paylater',
-        title: 'Paylater'),
+        title: 'Bank'),
     AllServiceChildModel(
         icon: ImageResource.new_all_service_scan_to_pay,
         name: 'KYC',
-        title: 'KYC'),
+        title: 'Bank'),
   ]),
 ];
 

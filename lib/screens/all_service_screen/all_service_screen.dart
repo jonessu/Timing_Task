@@ -167,11 +167,13 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                                                                   ),
                                                                                 ),
                                                                               ),
-                                                                              Text_Widget(
-                                                                                text: 'more',
-                                                                                fontSize: FontSize.fourteen,
-                                                                                colour: ColorResources.color222222,
-                                                                                fontWeight: FontWeight.w400,
+                                                                              Center(
+                                                                                child: Text_Widget(
+                                                                                  text: 'more',
+                                                                                  fontSize: FontSize.fourteen,
+                                                                                  colour: ColorResources.color222222,
+                                                                                  fontWeight: FontWeight.w400,
+                                                                                ),
                                                                               ),
                                                                             ],
                                                                           ),
@@ -275,6 +277,11 @@ class _ServiceScreenState extends State<ServiceScreen> {
   }
 
   Future<dynamic> customSearchCard(BuildContext context) {
+    List<dynamic> itemList = [];
+    for (var i = 0; i < allServiceList.length; i++) {
+      itemList = itemList + newAllServiceList[i].ListOfIcons;
+    }
+
     return showSearch(
         context: context,
         delegate: SearchPage<dynamic>(
@@ -290,36 +297,41 @@ class _ServiceScreenState extends State<ServiceScreen> {
                       Align(
                         alignment: Alignment.topLeft,
                         child: Text_Widget(
-                          text: service.titleName.toString(),
+                          text: service.title.toString(),
                           fontSize: FontSize.twenty,
                           colour: ColorResources.color222222,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
                       SizedBox(
-                          height: (service.noOfRow * 90.0),
+                          height: 120.0,
                           child: Padding(
                             padding: const EdgeInsets.all(16.0),
                             child: GridView.count(
-                                crossAxisCount: (service.noOfRow * 4),
+                                crossAxisCount: (4),
                                 crossAxisSpacing: 0,
                                 mainAxisSpacing: 8.0,
                                 children: List.generate(1, (index) {
-                                  return Wrap(
-                                    children: [
-                                      Center(
-                                        child: Image.asset(
-                                            service.ListOfIcons[index].icon),
-                                      ),
-                                      Text(
-                                        service.ListOfIcons[index].name,
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: ColorResources.color222222,
-                                            fontSize: FontSize.twelve,
-                                            fontWeight: FontWeight.w400),
-                                      )
-                                    ],
+                                  return Container(
+                                    height: 80,
+                                    child: Wrap(
+                                      children: [
+                                        Center(
+                                          child: Image.asset(service.icon),
+                                        ),
+                                        Center(
+                                          child: Text(
+                                            service.name,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                color:
+                                                    ColorResources.color222222,
+                                                fontSize: FontSize.twelve,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   );
                                 })),
                           )),
@@ -329,12 +341,8 @@ class _ServiceScreenState extends State<ServiceScreen> {
               ),
             ),
           ),
-          filter: (service) => [
-            service.ListOfIcons[0].title.toString().toLowerCase() +
-                service.ListOfIcons[1].title.toString().toLowerCase() +
-                service.ListOfIcons[2].title.toString().toLowerCase(),
-          ],
-          items: newAllServiceList,
+          filter: (service) => [service.name.toString().toLowerCase()],
+          items: itemList,
         ));
   }
 

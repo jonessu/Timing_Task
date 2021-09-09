@@ -15,6 +15,8 @@ class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
   ) async* {
     if (event is ServiceInitailEvent) {
       yield ServiceLoadedState();
+    } else if (event is SearchInitailEvent) {
+      yield SearchLoadedState();
     }
   }
 }
