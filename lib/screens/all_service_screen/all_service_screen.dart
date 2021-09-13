@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:assessment/Widget/text_widget.dart';
 import 'package:assessment/data/more_option_list.dart';
 import 'package:assessment/screens/all_service_screen/bloc/service_bloc.dart';
@@ -13,7 +11,6 @@ import 'package:search_page/search_page.dart';
 
 class ServiceScreen extends StatefulWidget {
   ServiceScreen({Key? key}) : super(key: key);
-
   @override
   _ServiceScreenState createState() => _ServiceScreenState();
 }
@@ -63,6 +60,10 @@ class _ServiceScreenState extends State<ServiceScreen> {
                 actions: [
                   IconButton(
                     icon: Icon(Icons.search),
+                    // onPressed: () {
+                    //   Navigator.of(context).push(MaterialPageRoute(
+                    //       builder: (context) => SearchCard()));
+                    // },
                     onPressed: () => customSearchCard(context),
                   ),
                 ],
@@ -93,6 +94,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
+                                      SizedBox(height: 5),
                                       SizedBox(
                                           height:
                                               (newAllServiceList[i].noOfRow *
@@ -103,20 +105,20 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                               mainAxisSpacing: 8.0,
                                               children: List.generate(
                                                   newAllServiceList[i]
-                                                              .ListOfIcons
+                                                              .listOfIcons
                                                               .length <
                                                           (newAllServiceList[i]
                                                                       .noOfRow *
                                                                   4) -
                                                               1
                                                       ? newAllServiceList[i]
-                                                          .ListOfIcons
+                                                          .listOfIcons
                                                           .length
                                                       : (newAllServiceList[i]
                                                               .noOfRow *
                                                           4), (index) {
                                                 return newAllServiceList[i]
-                                                            .ListOfIcons
+                                                            .listOfIcons
                                                             .length >
                                                         (newAllServiceList[i]
                                                                     .noOfRow *
@@ -134,7 +136,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                                                     customModalBottomSheet(
                                                                         context,
                                                                         i),
-                                                                child: (newAllServiceList[i].ListOfIcons.length -
+                                                                child: (newAllServiceList[i].listOfIcons.length -
                                                                             (newAllServiceList[i].noOfRow *
                                                                                 4) -
                                                                             1 <=
@@ -160,7 +162,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                                                                 ),
                                                                                 child: Center(
                                                                                   child: Text_Widget(
-                                                                                    text: "+" + (newAllServiceList[i].ListOfIcons.length - (newAllServiceList[i].noOfRow * 4)).toString(),
+                                                                                    text: "+" + (newAllServiceList[i].listOfIcons.length - (newAllServiceList[i].noOfRow * 4)).toString(),
                                                                                     fontSize: FontSize.sixteen,
                                                                                     colour: ColorResources.colorFA3245,
                                                                                     fontWeight: FontWeight.w700,
@@ -191,7 +193,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                                                   Center(
                                                                     child: Image.asset(newAllServiceList[
                                                                             i]
-                                                                        .ListOfIcons[
+                                                                        .listOfIcons[
                                                                             index]
                                                                         .icon),
                                                                   ),
@@ -199,7 +201,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                                                     child: Text(
                                                                       newAllServiceList[
                                                                               i]
-                                                                          .ListOfIcons[
+                                                                          .listOfIcons[
                                                                               index]
                                                                           .name,
                                                                       textAlign:
@@ -225,7 +227,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                                               child: Image.asset(
                                                                   newAllServiceList[
                                                                           i]
-                                                                      .ListOfIcons[
+                                                                      .listOfIcons[
                                                                           index]
                                                                       .icon),
                                                             ),
@@ -233,7 +235,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                                                               child: Text(
                                                                 newAllServiceList[
                                                                         i]
-                                                                    .ListOfIcons[
+                                                                    .listOfIcons[
                                                                         index]
                                                                     .name,
                                                                 textAlign:
@@ -279,7 +281,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
   Future<dynamic> customSearchCard(BuildContext context) {
     List<dynamic> itemList = [];
     for (var i = 0; i < allServiceList.length; i++) {
-      itemList = itemList + newAllServiceList[i].ListOfIcons;
+      itemList = itemList + newAllServiceList[i].listOfIcons;
     }
 
     return showSearch(
@@ -394,20 +396,20 @@ class _ServiceScreenState extends State<ServiceScreen> {
                             crossAxisSpacing: 0,
                             mainAxisSpacing: 8.0,
                             children: List.generate(
-                                newAllServiceList[i].ListOfIcons.length,
+                                newAllServiceList[i].listOfIcons.length,
                                 (index) {
                               return Container(
                                 child: Column(
                                   children: [
                                     Center(
                                       child: Image.asset(newAllServiceList[i]
-                                          .ListOfIcons[index]
+                                          .listOfIcons[index]
                                           .icon),
                                     ),
                                     Center(
                                       child: Text_Widget(
                                         text: newAllServiceList[i]
-                                            .ListOfIcons[index]
+                                            .listOfIcons[index]
                                             .name,
                                         colour: ColorResources.color222222,
                                         fontWeight: FontWeight.w400,

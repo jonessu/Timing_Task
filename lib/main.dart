@@ -1,6 +1,7 @@
 import 'package:assessment/data/ThemeNotifier.dart';
 import 'package:assessment/data/color.dart';
 import 'package:assessment/screens/Setting_screen/setting_screen.dart';
+import 'package:assessment/screens/authenticate_account_screen/authenticate_account_screen.dart';
 import 'package:assessment/screens/biometric_screen/biometric_screen.dart';
 import 'package:assessment/screens/home_tab_screen/home_tab_screen.dart';
 import 'package:assessment/screens/refer_earn_screen/refer_earn_screen.dart';
@@ -68,7 +69,7 @@ class _MyAppState extends State<MyApp> {
       //   primaryColor: ColorResources.color51063A,
       // ),
       //home: boolValue ? BiometricScreen() : SettingsScreen(),
-      home: HometabScreen(),
+      home: AuthenticateAccountScreen(),
     );
   }
 }

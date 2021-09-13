@@ -15,8 +15,10 @@ class ColorResources {
   static const Color color10CB00 = Color(0xff10CB00);
   static const Color colorFA3245 = Color(0xffFA3245);
   static const Color colorFFF3E9 = Color(0xffFFF3E9);
+  static const Color colorEFEFEF = Color(0xffEFEFEF);
   static const Color colorBFCBD720 = Color.fromRGBO(191, 203, 215, 0.2);
   static const Color colorBFCBD710 = Color.fromRGBO(191, 203, 215, 0.1);
   static const Color colorBFCBD730 = Color.fromRGBO(191, 203, 215, 0.3);
+
   static const Color color00000040 = Color.fromRGBO(0, 0, 0, 0.4);
 }

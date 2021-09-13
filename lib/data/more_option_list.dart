@@ -143,13 +143,13 @@ List trendServiceList = [
 class AllServiceMainModel {
   String? titleName;
   int? noOfRow;
-  List<AllServiceChildModel>? ListOfIcons;
+  List<AllServiceChildModel>? listOfIcons;
 
   AllServiceMainModel(
     String s, {
     this.titleName,
     this.noOfRow,
-    this.ListOfIcons,
+    this.listOfIcons,
   });
 }
 
@@ -169,7 +169,7 @@ List newAllServiceList = [
   AllServiceMainModel('Payments',
       titleName: 'Payments',
       noOfRow: 2,
-      ListOfIcons: [
+      listOfIcons: [
         AllServiceChildModel(
             icon: ImageResource.new_all_service_pay_to_contacts,
             name: 'Pay to \nContacts',
@@ -179,7 +179,9 @@ List newAllServiceList = [
             name: 'Fund \nTransfer',
             title: 'Payments'),
         AllServiceChildModel(
-            icon: ImageResource.new_all_service_upi, name: 'UPI', title: 'UPI'),
+            icon: ImageResource.new_all_service_upi,
+            name: 'UPI',
+            title: 'Payments'),
         AllServiceChildModel(
             icon: ImageResource.new_all_service_add_funds,
             name: 'Add \nFunds',
@@ -200,7 +202,7 @@ List newAllServiceList = [
   AllServiceMainModel('Recharge, Bills & Offers',
       titleName: 'Recharge, Bills & Offers',
       noOfRow: 2,
-      ListOfIcons: [
+      listOfIcons: [
         AllServiceChildModel(
             icon: ImageResource.new_all_service_bill_pay,
             name: 'Bill Pay',
@@ -226,7 +228,7 @@ List newAllServiceList = [
             name: 'CashKaro \nEarnings',
             title: 'Recharge, Bills & Offers'),
       ]),
-  AllServiceMainModel('Bank', titleName: 'Bank', noOfRow: 1, ListOfIcons: [
+  AllServiceMainModel('Bank', titleName: 'Bank', noOfRow: 1, listOfIcons: [
     AllServiceChildModel(
         icon: ImageResource.new_all_service_pay_to_contacts,
         name: 'Split \nBills',

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:assessment/Widget/text_widget.dart';
 import 'package:assessment/data/more_option_list.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:assessment/screens/refer_earn_screen/bloc/referearn_bloc.dart';
 import 'package:assessment/screens/refer_earn_screen/search_contact_screen.dart';
 import 'package:assessment/utils/color_resource.dart';
